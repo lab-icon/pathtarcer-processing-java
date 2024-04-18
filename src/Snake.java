@@ -7,13 +7,13 @@ class Snake extends PApplet {
     private float speed = 2;
     private boolean alive = true;
     private boolean start = false;
-    private final ArrayList<PVector> body = new ArrayList<PVector>();
+    private final ArrayList<PVector> body = new ArrayList<>();
     private final PVector head;
     private final PathTracer pt;
     private static final int radius = 60;
     private float dist;
     private float bodySpeed;
-    private int[] colors = new int[255];
+    private final int[] colors = new int[255];
     public Snake(PathTracer pt, int x, int y) {
         this.pt = pt;
 
@@ -45,17 +45,13 @@ class Snake extends PApplet {
         return this.alive;
     }
 
-    PVector getHead() {
-        return this.head;
-    }
-
     void show() {
         pt.pushMatrix();
         float radius = 60;
         ArrayList<PVector> pVectors = this.body;
         for (int i = 0; i < pVectors.size(); i++) {
             PVector pVector = pVectors.get(i);
-            pt.fill(colors[i], colors[i+1], colors[i+2]);
+            pt.fill(this.colors[i], this.colors[i+1], this.colors[i+2]);
             pt.circle(pVector.x, pVector.y, radius);
         }
         pt.push();

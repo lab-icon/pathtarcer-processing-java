@@ -2,8 +2,7 @@ import processing.core.PApplet;
 import processing.core.PVector;
 
 class Apple extends PApplet {
-    private PathTracer pt;
-    private float x,y;
+    private final PathTracer pt;
     private PVector loc;
 
     public Apple(PathTracer pt){

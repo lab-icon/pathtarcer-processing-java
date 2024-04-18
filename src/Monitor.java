@@ -9,10 +9,6 @@ public class Monitor {
         this.height = height;
     }
 
-    Monitor getMonitorData() {
-        return new Monitor(this.x, this.y, this.width, this.height);
-    }
-
     public int getX() {
         return this.x;
     }

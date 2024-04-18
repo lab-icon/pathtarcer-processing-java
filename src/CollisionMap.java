@@ -1,4 +1,3 @@
-import processing.core.PVector;
 import processing.data.JSONObject;
 
 import java.io.File;
@@ -8,7 +7,7 @@ import java.util.Set;
 import static processing.core.PApplet.loadJSONObject;
 
 public interface CollisionMap {
-    HashMap<String, Line> lines = new HashMap<String, Line>();
+    HashMap<String, Line> lines = new HashMap<>();
 
     default String[] mapper() {
         JSONObject json = loadJSONObject(new File("src/lines.json"));
