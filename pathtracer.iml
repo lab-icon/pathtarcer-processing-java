@@ -17,5 +17,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="OpenKinectProcessing" level="project" />
   </component>
 </module>

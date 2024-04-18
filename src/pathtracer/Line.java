@@ -1,3 +1,5 @@
+package pathtracer;
+
 public class Line {
     public final int direction;
     public final String orientation;

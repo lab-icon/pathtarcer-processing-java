@@ -1,3 +1,6 @@
+package pathtracer;
+
+import org.jetbrains.annotations.NotNull;
 import processing.core.PApplet;
 import processing.core.PVector;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ class Snake extends PApplet {
             this.body.add(new PVector(this.x - i * 12, this.y));
         }
     }
+    private int points = 0;
 
     public float getX() {
         return this.x;
@@ -106,18 +110,25 @@ class Snake extends PApplet {
         this.alive = false;
     }
 
-    void eat(Apple apple) {
+    void eat(@NotNull Apple apple) {
       PVector head = this.body.getFirst();
       float d = dist(head.x, head.y, apple.getLoc().x, apple.getLoc().y);
       if(d < 35) {
-        this.speed += random(0.05F, 0.5F);
+        float rand  = random(0.05F, 0.5F);
+        this.speed += rand;
+        this.points += 10;
         apple.location();
         this.body.add(new PVector(this.x, this.y));
       }
     }
+
     public void updateColors(){
         for(int i = 0; i < 255; i++) {
             colors[i] = (int) random(255);
         }
+    }
+
+    public int getPoints(){
+        return this.points;
     }
 }

@@ -1,4 +1,7 @@
+package pathtracer;
+
 import processing.core.PApplet;
+import processing.event.KeyEvent;
 
 public class PathTracer extends PApplet implements CollisionMap {
 
@@ -11,7 +14,7 @@ public class PathTracer extends PApplet implements CollisionMap {
     boolean breaking = false;
 
     public static void main(String[] args) {
-        PApplet.main(new String[] { "PathTracer" });
+        PApplet.main(new String[] { "pathtracer.PathTracer" });
     }
 
     @Override
@@ -29,14 +32,14 @@ public class PathTracer extends PApplet implements CollisionMap {
         background(0);
         mapMonitor();
         onKeyPress();
-
+        scoreboard();
         snake.show();
         snake.update();
         snake.mouseChase();
         snake.eat(apple);
 
         apple.show();
-
+        isGameOver();
         String[] keys = mapper();
         for (String key : keys) {
             Line line = lines.get(key);
@@ -48,13 +51,21 @@ public class PathTracer extends PApplet implements CollisionMap {
         }
 
     }
+    void scoreboard(){
+        push();
+        fill(255);
+        String text = "Score: " + snake.getPoints();
+        textSize(64);
+        text(text,400, 66);
+        pop();
+    }
 
     void mapMonitor() {
         push();
         noStroke();
         fill(255,209,0);
 
-        // SUPERIOR ESQUERDO
+        // SUPERIOR ESQUERDOS
         int mx1 = round(481);
         int my1 = round(0);
         int mw1 = round(400);
@@ -102,7 +113,10 @@ public class PathTracer extends PApplet implements CollisionMap {
     void onKeyPress() {
         if (keyCode == ENTER) {
             snake.setStart();
+            System.out.println(snake.getAlive());
+
             if (!snake.getAlive()){
+                System.out.println("Reset");
                 reset();
             }
         }
@@ -114,6 +128,22 @@ public class PathTracer extends PApplet implements CollisionMap {
         snake.updateColors();
         apple.location();
         breaking = false;
+    }
+
+    void isGameOver(){
+        boolean isTrue = snake.getAlive();
+        if (!isTrue) {
+            float meioX = (float) this.width / 2;
+            float meioY = (float) this.height / 2;
+            square(meioX, meioY - 300, 400);
+            String endGame = "Game Over";
+            String score = "Your final score:" + snake.getPoints();
+            String enter = "Press Enter to play again";
+            textSize(100);
+            text(endGame, meioX, meioY - 100);
+            text(score, meioX, meioY);
+            text(enter, meioX, meioY + 200);
+        }
     }
 
 }

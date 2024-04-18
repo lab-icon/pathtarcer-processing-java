@@ -1,3 +1,5 @@
+package pathtracer;
+
 import processing.data.JSONObject;
 
 import java.io.File;
@@ -11,7 +13,7 @@ public interface CollisionMap {
     HashMap<String, Line> lines = new HashMap<>();
 
     default String[] mapper() {
-        JSONObject json = loadJSONObject(new File("src/lines.json"));
+        JSONObject json = loadJSONObject(new File("src/pathtracer/lines.json"));
         Set<String> keys = json.keys();
         String[] keysArray = keys.toArray(new String[0]);
 
