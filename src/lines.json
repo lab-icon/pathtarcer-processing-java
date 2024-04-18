@@ -1,0 +1,130 @@
+{
+  "a": {
+    "direction": 0,
+    "dentro": "direita",
+    "startX": 481,
+    "startY": 572,
+    "endX": 481,
+    "endY": 0
+  },
+  "b": {
+    "direction": 1,
+    "dentro": "embaixo",
+    "startX": 481,
+    "startY": 0,
+    "endX": 881,
+    "endY": 0
+  },
+  "c": {
+    "direction": 0,
+    "dentro": "esquerda",
+    "startX": 881,
+    "startY": 0,
+    "endX": 881,
+    "endY": 66
+  },
+  "d": {
+    "direction": 1,
+    "dentro": "embaixo",
+    "startX": 881,
+    "startY": 66,
+    "endX": 1568,
+    "endY": 66
+  },
+  "e": {
+    "direction": 0,
+    "dentro": "esquerda",
+    "startX": 1568,
+    "startY": 66,
+    "endX": 1568,
+    "endY": 466
+  },
+  "f": {
+    "direction": 1,
+    "dentro": "emcima",
+    "startX": 1568,
+    "startY": 466,
+    "endX": 1446,
+    "endY": 466
+  },
+  "g": {
+    "direction": 0,
+    "dentro": "esquerda",
+    "startX": 1446,
+    "startY": 466,
+    "endX": 1446,
+    "endY": 1080
+  },
+  "h": {
+    "direction": 1,
+    "dentro": "emcima",
+    "startX": 1446,
+    "startY": 1080,
+    "endX": 1047,
+    "endY": 1080
+  },
+  "i": {
+    "direction": 0,
+    "dentro": "direita",
+    "startX": 1047,
+    "startY": 1080,
+    "endX": 1047,
+    "endY": 932
+  },
+  "j": {
+    "direction": 1,
+    "dentro": "emcima",
+    "startX": 1047,
+    "startY": 932,
+    "endX": 352,
+    "endY": 932
+  },
+  "k": {
+    "direction": 0,
+    "dentro": "direita",
+    "startX": 352,
+    "startY": 932,
+    "endX": 352,
+    "endY": 572
+  },
+  "l": {
+    "direction": 1,
+    "dentro": "embaixo",
+    "startX": 352,
+    "startY": 572,
+    "endX": 481,
+    "endY": 572
+  },
+  "m": {
+    "direction": 0,
+    "dentro": "esquerda",
+    "startX": 881,
+    "startY": 572,
+    "endX": 881,
+    "endY": 465
+  },
+  "n": {
+    "direction": 1,
+    "dentro": "emcima",
+    "startX": 881,
+    "startY": 466,
+    "endX": 1047,
+    "endY": 466
+  },
+  "o": {
+    "direction": 0,
+    "dentro": "direita",
+    "startX": 1047,
+    "startY": 465,
+    "endX": 1047,
+    "endY": 572
+  },
+  "p": {
+    "direction": 1,
+    "dentro": "embaixo",
+    "startX": 1047,
+    "startY": 572,
+    "endX": 881,
+    "endY": 572
+  }
+}
