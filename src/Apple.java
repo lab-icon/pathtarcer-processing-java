@@ -29,8 +29,8 @@ class Apple extends PApplet {
 
         float monitor = random(monitors.length);
         Monitor m = (Monitor) monitors[(int) monitor];
-        float x = random(m.getX() + 10,m.getX()+m.getWidth() - 10);
-        float y = random(m.getY() + 10,m.getY()+m.getHeight() - 10);
+        float x = random(m.x() + 10,m.x()+m.width() - 10);
+        float y = random(m.y() + 10,m.y()+m.height() - 10);
         return new PVector(x,y);
     }
 }

@@ -1,10 +1,10 @@
 public class Line {
-    public int direction;
-    public String orientation;
-    public int startX;
-    public int startY;
-    public int endX;
-    public int endY;
+    public final int direction;
+    public final String orientation;
+    public final int startX;
+    public final int startY;
+    public final int endX;
+    public final int endY;
 
     Line(int direction, String orientation, int startX, int startY, int endX, int endY) {
         this.direction = direction;

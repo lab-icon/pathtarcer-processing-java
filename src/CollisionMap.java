@@ -6,6 +6,7 @@ import java.util.Set;
 
 import static processing.core.PApplet.loadJSONObject;
 
+@SuppressWarnings("unchecked")
 public interface CollisionMap {
     HashMap<String, Line> lines = new HashMap<>();
 
