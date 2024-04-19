@@ -1,6 +1,6 @@
 package pathtracer;
 
-//import org.openkinect.processing.Kinect2;
+import org.openkinect.processing.Kinect2;
 import processing.core.PApplet;
 
 public class PathTracer extends PApplet implements CollisionMap {
@@ -14,7 +14,7 @@ public class PathTracer extends PApplet implements CollisionMap {
     boolean breaking = false;
 
     // The kinect object
-//    Kinect2 kinect2;
+    Kinect2 kinect2;
 
     public static void main(String[] args) {
         PApplet.main(new String[] { "pathtracer.PathTracer" });
@@ -58,10 +58,10 @@ public class PathTracer extends PApplet implements CollisionMap {
     }
     void scoreboard(){
         push();
-        fill(255);
+        fill(20,100,120);
         String text = "Score: " + snake.getPoints();
         textSize(64);
-        text(text,580, 66);
+        text(text,510, 66);
         pop();
     }
 
@@ -139,7 +139,7 @@ public class PathTracer extends PApplet implements CollisionMap {
             float halfX = (float) this.width / 2;
             float halfY = (float) this.height / 2;
 //            fill(80,80,80);
-            String endGame = "Game Over";
+            String endGame = "Game\nOver";
             String score;
             if(snake.getPoints() > 0) {
                 score = "Your final score:" + snake.getPoints();
@@ -147,12 +147,14 @@ public class PathTracer extends PApplet implements CollisionMap {
             else {
                 score = "Your final score: 0";
             }
-            String enter = "Press Enter to play again";
+            String enter = "Press Enter\nto play again";
             textSize(64);
-            fill(255);
-            text(endGame, halfX - 300, halfY - 100);
-            text(score, halfX + 100, halfY);
-            text(enter, halfX - 200, halfY + 400);
+            fill(20,20,100);
+            textAlign(CENTER);
+            text(endGame, 690, halfY - 250);
+            textAlign(LEFT);
+            text(score, halfX + 80, halfY - 230);
+            text(enter, 550, halfY + 170);
         }
     }
 
