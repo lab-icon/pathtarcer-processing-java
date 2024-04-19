@@ -148,11 +148,11 @@ public class PathTracer extends PApplet implements CollisionMap {
                 score = "Your final score: 0";
             }
             String enter = "Press Enter to play again";
-            textSize(100);
+            textSize(64);
             fill(255);
-            text(endGame, halfX, halfY - 100);
-            text(score, halfX, halfY);
-            text(enter, halfX, halfY + 400);
+            text(endGame, halfX - 300, halfY - 100);
+            text(score, halfX + 100, halfY);
+            text(enter, halfX - 200, halfY + 400);
         }
     }
 
