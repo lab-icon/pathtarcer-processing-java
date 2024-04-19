@@ -3,7 +3,7 @@ package pathtracer;
 import processing.core.PApplet;
 import processing.core.PVector;
 
-class Apple extends PApplet {
+public class Apple extends PApplet {
     private final PathTracer pt;
     private PVector loc;
 

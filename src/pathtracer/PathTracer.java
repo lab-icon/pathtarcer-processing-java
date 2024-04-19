@@ -1,7 +1,7 @@
 package pathtracer;
 
+import org.openkinect.processing.Kinect2;
 import processing.core.PApplet;
-import processing.event.KeyEvent;
 
 public class PathTracer extends PApplet implements CollisionMap {
 
@@ -12,6 +12,9 @@ public class PathTracer extends PApplet implements CollisionMap {
     static final int initialY = 500;
 
     boolean breaking = false;
+
+    // The kinect object
+    Kinect2 kinect2;
 
     public static void main(String[] args) {
         PApplet.main(new String[] { "pathtracer.PathTracer" });
