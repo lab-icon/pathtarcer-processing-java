@@ -1,6 +1,6 @@
 package pathtracer;
 
-import org.openkinect.processing.Kinect2;
+//import org.openkinect.processing.Kinect2;
 import processing.core.PApplet;
 
 public class PathTracer extends PApplet implements CollisionMap {
@@ -14,7 +14,7 @@ public class PathTracer extends PApplet implements CollisionMap {
     boolean breaking = false;
 
     // The kinect object
-    Kinect2 kinect2;
+//    Kinect2 kinect2;
 
     public static void main(String[] args) {
         PApplet.main(new String[] { "pathtracer.PathTracer" });
@@ -42,7 +42,9 @@ public class PathTracer extends PApplet implements CollisionMap {
         snake.eat(apple);
 
         apple.show();
-        isGameOver();
+        if(!snake.getAlive()) {
+            isGameOver();
+        }
         String[] keys = mapper();
         for (String key : keys) {
             Line line = lines.get(key);
@@ -59,7 +61,7 @@ public class PathTracer extends PApplet implements CollisionMap {
         fill(255);
         String text = "Score: " + snake.getPoints();
         textSize(64);
-        text(text,400, 66);
+        text(text,580, 66);
         pop();
     }
 
@@ -116,12 +118,12 @@ public class PathTracer extends PApplet implements CollisionMap {
     void onKeyPress() {
         if (keyCode == ENTER) {
             snake.setStart();
-            System.out.println(snake.getAlive());
 
             if (!snake.getAlive()){
                 System.out.println("Reset");
                 reset();
             }
+            keyCode = 0;
         }
     }
 
@@ -134,19 +136,23 @@ public class PathTracer extends PApplet implements CollisionMap {
     }
 
     void isGameOver(){
-        boolean isTrue = snake.getAlive();
-        if (!isTrue) {
-            float meioX = (float) this.width / 2;
-            float meioY = (float) this.height / 2;
-            square(meioX, meioY - 300, 400);
+            float halfX = (float) this.width / 2;
+            float halfY = (float) this.height / 2;
+//            fill(80,80,80);
             String endGame = "Game Over";
-            String score = "Your final score:" + snake.getPoints();
+            String score;
+            if(snake.getPoints() > 0) {
+                score = "Your final score:" + snake.getPoints();
+            }
+            else {
+                score = "Your final score: 0";
+            }
             String enter = "Press Enter to play again";
             textSize(100);
-            text(endGame, meioX, meioY - 100);
-            text(score, meioX, meioY);
-            text(enter, meioX, meioY + 200);
+            fill(255);
+            text(endGame, halfX, halfY - 100);
+            text(score, halfX, halfY);
+            text(enter, halfX, halfY + 400);
         }
     }
 
-}

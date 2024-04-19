@@ -1,6 +1,5 @@
 package pathtracer;
 
-import org.jetbrains.annotations.NotNull;
 import processing.core.PApplet;
 import processing.core.PVector;
 import java.util.ArrayList;
@@ -110,7 +109,7 @@ class Snake extends PApplet {
         this.alive = false;
     }
 
-    void eat(@NotNull Apple apple) {
+    void eat(Apple apple) {
       PVector head = this.body.getFirst();
       float d = dist(head.x, head.y, apple.getLoc().x, apple.getLoc().y);
       if(d < 35) {
